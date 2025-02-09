@@ -1,21 +1,48 @@
 import hashlib
 
-def crack_hash(hash_to_crack, wordlist):
-    """Attempt to crack an MD5 hash using a wordlist."""
+def generate_md5(password):
+    return hashlib.md5(password.encode()).hexdigest()
+
+def crack_hash(md5_hash, wordlist_path):
     try:
-        with open(wordlist, "r", encoding="latin-1") as file:  # FIXED Encoding Issue
+        with open(wordlist_path, 'r', encoding='latin-1') as file:
             for word in file:
                 word = word.strip()
-                hashed_word = hashlib.md5(word.encode()).hexdigest()
-                if hashed_word == hash_to_crack:
-                    return f"[+] Password found: {word}"
+                if generate_md5(word) == md5_hash:
+                    return word
+        return None
     except FileNotFoundError:
-        return "[-] Wordlist file not found."
+        print(f"Error: The wordlist file at '{wordlist_path}' was not found.")
+        return None
+    except Exception as e:
+        print(f"An error occurred: {e}")
+        return None
+
+def main():
+    print("Welcome to MD5 Hash Generator and Cracker!")
+    print("1. Generate MD5 Hash for a Password")
+    print("2. Crack an MD5 Hash using a Wordlist")
+
+    option = input("Choose an option (1 or 2): ")
+
+    if option == '1':
+        password = input("Enter the password to generate its MD5 hash: ")
+        hashed_password = generate_md5(password)
+        print(f"MD5 Hash of '{password}': {hashed_password}")
+
+    elif option == '2':
+        md5_hash = input("Enter the MD5 hash to crack: ")
+        wordlist_path = input("Enter the path to the wordlist file (e.g., 'rockyou.txt'): ")
+        
+        result = crack_hash(md5_hash, wordlist_path)
+        
+        if result:
+            print(f"Password found: {result}")
+        else:
+            print("Password not found.")
     
-    return "[-] Password not found in wordlist."
+    else:
+        print("Invalid option! Please choose either 1 or 2.")
 
 if __name__ == "__main__":
-    hash_input = input("Enter the MD5 hash to crack: ")
-    wordlist_path = input("Enter the path to the wordlist file: ")
-    result = crack_hash(hash_input, wordlist_path)
-    print(result)
+    main()
