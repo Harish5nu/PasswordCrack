@@ -45,3 +45,12 @@ This Python program allows you to **generate MD5 hashes** and **crack MD5 hashes
 If the password is found, it will display it.
 
 If not, it will say "Password not found."
+
+
+## Wordlist
+
+You can download the `rockyou.txt` wordlist from the following link:
+
+[Download rockyou.txt](https://github.com/alphazero/rockyou.txt)
+
+Alternatively, you can use any wordlist of your choice.
