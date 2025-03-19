@@ -26,7 +26,7 @@ def main():
     option = input("Choose an option (1 or 2): ")
 
     if option == '1':
-        password = input("Enter the password to generate its MD5 hash: ")
+        password = input("Enter the password to generate it's MD5 hash: ")
         hashed_password = generate_md5(password)
         print(f"MD5 Hash of '{password}': {hashed_password}")
 
