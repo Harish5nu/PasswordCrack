@@ -22,7 +22,7 @@ This Python program allows you to **generate MD5 hashes** and **crack MD5 hashes
 
     Option 2: Crack an MD5 hash using a wordlist.
 
-    Generate MD5 Hash (Option 1):
+    Generate MD5 Hash (Option 1.):
 
 3. Enter a password, and the program will show you its MD5 hash.
 
@@ -30,7 +30,7 @@ This Python program allows you to **generate MD5 hashes** and **crack MD5 hashes
 
     MD5 Hash: e99a18c428cb38d5f260853678922e03
 
-    Crack MD5 Hash (Option 2):
+    Crack MD5 Hash (Option 2.):
 
 4. Enter an MD5 hash and the path to the wordlist file.
 
