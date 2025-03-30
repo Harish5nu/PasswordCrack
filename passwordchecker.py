@@ -21,7 +21,7 @@ def crack_hash(md5_hash, wordlist_path):
 def main():
     print("Welcome to MD5 Hash Generator and Cracker!")
     print("1. Generate MD5 Hash for a Password")
-    print("2. Crack an MD5 Hash using a Wordlist")
+    print("2. Crack An MD5 Hash using a Wordlist")
 
     option = input("Choose an option (1 or 2): ")
 
