@@ -31,7 +31,7 @@ def main():
         print(f"MD5 Hash of '{password}': {hashed_password}")
 
     elif option == '2':
-        md5_hash = input("Enter the MD5 hash to crack: ")
+        md5_hash = input("Enter the MD5 hash for crack: ")
         wordlist_path = input("Enter the path to the wordlist file (e.g., 'rockyou.txt'): ")
         
         result = crack_hash(md5_hash, wordlist_path)
